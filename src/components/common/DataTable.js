@@ -131,10 +131,10 @@ const Row = ({ data }) => {
   return (
     <tr>
       <td>{data.id}</td>
-      <Link to={`/employee/Edit/${data.id}`}>
-        <td>{data.employee_name}</td>
-      </Link>
-
+      <td>
+        {" "}
+        <Link to={`/employee/Edit/${data.id}`}>{data.employee_name}</Link>
+      </td>
       <td>{data.employee_salary}</td>
       <td>{data.employee_age}</td>
       <td>
