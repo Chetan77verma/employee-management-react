@@ -4,7 +4,28 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/startbootstrap-sb-admin-2/css/sb-admin-2.min.css";
+import axios from "axios";
 
+axios.interceptors.request.use(
+  (request) => {
+    console.log("request", request);
+    return request;
+  },
+  (error) => {
+    console.log(error);
+    return Promise.reject(error);
+  }
+);
+axios.interceptors.response.use(
+  (response) => {
+    console.log("response", response);
+    return response;
+  },
+  (error) => {
+    console.log(error);
+    return Promise.reject(error);
+  }
+);
 ReactDOM.render(
   <React.StrictMode>
     <App />
